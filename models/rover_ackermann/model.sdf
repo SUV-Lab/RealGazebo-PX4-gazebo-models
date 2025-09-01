@@ -484,5 +484,19 @@
       <i_gain>0</i_gain>
       <d_gain>0</d_gain>
     </plugin>
+    <plugin filename="libRealGazebo.so" name="custom::RealGazebo">
+      <unreal_ip>127.0.0.1</unreal_ip>      <!-- only localhost supported, try to use RealGazebo-ROS2 to use another address -->
+      <unreal_port>5005</unreal_port>       <!-- only 5005 port supported, try to use RealGazebo-ROS2 to use another port -->
+      <motorJointList>
+        <motorJoint name="rover_ackermann/FrontLeftWheelJoint"/>
+        <motorJoint name="rover_ackermann/FrontRightWheelJoint"/>
+        <motorJoint name="rover_ackermann/RearLeftWheelJoint"/>
+        <motorJoint name="rover_ackermann/RearRightWheelJoint"/>
+      </motorJointList>
+      <moveableLinkList>
+        <moveableLink name="rover_ackermann/FrontLeftWheelSteering"/>
+        <moveableLink name="rover_ackermann/FrontRightWheelSteering"/>
+      </moveableLinkList>
+    </plugin>
   </model>
 </sdf>

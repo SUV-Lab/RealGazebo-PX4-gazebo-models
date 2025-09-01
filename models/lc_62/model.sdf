@@ -1304,5 +1304,26 @@
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
+    <plugin filename="libRealGazebo.so" name="custom::RealGazebo">
+      <unreal_ip>127.0.0.1</unreal_ip>      <!-- only localhost supported, try to use RealGazebo-ROS2 to use another address -->
+      <unreal_port>5005</unreal_port>       <!-- only 5005 port supported, try to use RealGazebo-ROS2 to use another port -->
+      <motorJointList>
+        <motorJoint name="rotor_0_joint"/>
+        <motorJoint name="rotor_1_joint"/>
+        <motorJoint name="rotor_2_joint"/>
+        <motorJoint name="rotor_3_joint"/>
+        <motorJoint name="rotor_4_joint"/>
+        <motorJoint name="rotor_5_joint"/>
+        <motorJoint name="left_rotor_puller_joint"/>
+        <motorJoint name="right_rotor_puller_joint"/>
+      </motorJointList>
+      <moveableLinkList>
+        <moveableLink name="left_ail"/>
+        <moveableLink name="right_ail"/>
+        <moveableLink name="left_elevator"/>
+        <moveableLink name="right_elevator"/>
+        <moveableLink name="rudder"/>
+      </moveableLinkList>
+    </plugin>
   </model>
 </sdf>
